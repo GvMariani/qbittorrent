@@ -3,7 +3,7 @@
 #define beta rc2
 
 Name:		qbittorrent
-Version:	5.1.4
+Version:	5.2.0
 Summary:	A lightweight but featureful BitTorrent client
 Group:		Networking/File transfer
 License:	GPLv2+
@@ -114,4 +114,5 @@ CMAKE_BUILD_DIR=build-gui %cmake -G Ninja -DGUI:BOOL=ON -DDBUS:BOOL=ON -DQT6:BOO
 %{_mandir}/man1/%{name}-nox.1*
 %{_mandir}/ru/man1/qbittorrent-nox.1.*
 %{_mandir}/ru/man1/qbittorrent.1.*
+%{_datadir}/metainfo/org.qbittorrent.qBittorrent-nox.metainfo.xml
 %endif
