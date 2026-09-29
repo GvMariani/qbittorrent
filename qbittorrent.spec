@@ -4,7 +4,7 @@
 
 Summary:		A lightweight but featureful BitTorrent client
 Name:		qbittorrent
-Version:		5.2.3
+Version:		5.2.4
 License:		GPLv2+
 Group:	Networking/File transfer
 Url:		https://qbittorrent.sourceforge.net
@@ -13,7 +13,7 @@ Source0:	https://github.com/qbittorrent/qBittorrent/archive/refs/tags/release-%{
 %else
 Source0:	https://downloads.sourceforge.net/project/qbittorrent/qbittorrent/qbittorrent-%{version}/qbittorrent-%{version}.tar.xz
 %endif
-Release:	%{?beta:0.%{beta}.}2
+Release:	%{?beta:0.%{beta}.}1
 # Backport of e154c1a (PR #23953): build against libtorrent 2.1
 # storage_params.path is now string_view; mapped_files replaced by renamed_files
 Patch0:		qbittorrent-libtorrent-2.1.patch
