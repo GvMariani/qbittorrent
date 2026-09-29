@@ -17,10 +17,10 @@ Release:	%{?beta:0.%{beta}.}1
 # Backport of e154c1a (PR #23953): build against libtorrent 2.1
 # storage_params.path is now string_view; mapped_files replaced by renamed_files
 Patch0:		qbittorrent-libtorrent-2.1.patch
-# Patch for fix build issue introduced in qbittorrent 4.1.4 on non x64bit arch like armv7 or i686. (penguin)
-# /src/base/utils/fs.cpp:346:10: error: case value evaluates to 4283649346, 
-# which cannot be narrowed to type '__fsword_t' (aka 'int') [-Wc++11-narrowing]
-#Patch1:		qbittorrent-x86-build-fix.patch
+# qbittorrent-x86-build-fix.patch used to be here (disabled since 4.1.4) for a
+# -Wc++11-narrowing error on the statfs f_type switch in src/base/utils/fs.cpp
+# for non-x64 arches. It is gone: upstream now writes the switch as
+# static_cast<quint32>(buf.f_type), which is the actual fix.
 BuildRequires:		cmake
 BuildRequires:		ninja
 BuildRequires:		qmake-qt6
