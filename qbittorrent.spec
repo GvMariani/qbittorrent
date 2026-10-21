@@ -4,7 +4,7 @@
 
 Summary:		A lightweight but featureful BitTorrent client
 Name:		qbittorrent
-Version:		5.2.4
+Version:		5.3.0
 License:		GPLv2+
 Group:	Networking/File transfer
 Url:		https://qbittorrent.sourceforge.net
@@ -14,9 +14,6 @@ Source0:	https://github.com/qbittorrent/qBittorrent/archive/refs/tags/release-%{
 Source0:	https://downloads.sourceforge.net/project/qbittorrent/qbittorrent/qbittorrent-%{version}/qbittorrent-%{version}.tar.xz
 %endif
 Release:	%{?beta:0.%{beta}.}1
-# Backport of e154c1a (PR #23953): build against libtorrent 2.1
-# storage_params.path is now string_view; mapped_files replaced by renamed_files
-Patch0:		qbittorrent-libtorrent-2.1.patch
 # qbittorrent-x86-build-fix.patch used to be here (disabled since 4.1.4) for a
 # -Wc++11-narrowing error on the statfs f_type switch in src/base/utils/fs.cpp
 # for non-x64 arches. It is gone: upstream now writes the switch as
